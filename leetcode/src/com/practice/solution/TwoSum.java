@@ -8,9 +8,11 @@ import java.util.HashMap;
  */
 public class TwoSum {
     public int[] answer(int[] nums, int target) {
+        //key：放相減後的值 value：放位子
         HashMap<Integer, Integer> tracker = new HashMap<Integer, Integer>();
         int len = nums.length;
         for(int i = 0; i < len; i++){
+            //判斷是否有符合的值的key 有的話回傳 對應value及現在的位子，沒符合則與答案相減放到對應的key value
             if(tracker.containsKey(nums[i])){
                 int left = tracker.get(nums[i]);
                 return new int[]{left, i};
